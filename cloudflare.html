@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What is Cloudflare? How a CDN Works & Why Sites Use It | StackGuide</title>
+  <meta name="description" content="Learn what Cloudflare is, how a content delivery network (CDN) speeds up websites, and why DDoS protection, DNS, and SSL make Cloudflare essential for modern sites." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://stackguide.example/cloudflare.html" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a73e8'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <div id="app-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.php">Home</a> / Cloudflare</div>
+        <span class="eyebrow-2">Performance &amp; security</span>
+        <h1>What is Cloudflare, and why is it everywhere?</h1>
+        <p class="lead muted" style="max-width:760px">A huge share of the web sits behind Cloudflare. This guide explains what it actually does — content delivery, caching, DDoS protection, DNS, and SSL — and why so many sites rely on it.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="toc reveal prose">
+          <strong>On this page</strong>
+          <ul>
+            <li><a href="#cdn">How a CDN works</a></li>
+            <li><a href="#security">Security &amp; DDoS protection</a></li>
+            <li><a href="#dns">DNS &amp; SSL</a></li>
+            <li><a href="#why">Why websites need it</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cdn" style="padding-top:0">
+      <div class="container split">
+        <div class="reveal prose">
+          <span class="eyebrow-2">Speed</span>
+          <h2>How a content delivery network works</h2>
+          <p class="muted">A CDN is a network of servers spread across the globe. Instead of every visitor fetching your site from one origin server, the CDN keeps cached copies in data centers close to users. When someone visits, the nearest "edge" server responds — cutting latency dramatically.</p>
+          <p class="muted">Cloudflare operates one of the largest networks on earth, with data centers in hundreds of cities. Static assets — images, CSS, scripts — are served from the edge, so pages load faster and your origin server handles far less traffic.</p>
+        </div>
+        <div class="reveal">
+          <div class="card" style="padding:28px">
+            <h3>Without a CDN vs. with a CDN</h3>
+            <div class="table-wrap" style="box-shadow:none;border:0;margin-top:8px">
+              <table class="cmp">
+                <thead><tr><th></th><th>No CDN</th><th>With CDN</th></tr></thead>
+                <tbody>
+                  <tr><td>Distance to user</td><td class="no">Far</td><td class="ok">Near</td></tr>
+                  <tr><td>Page speed</td><td class="no">Slower</td><td class="ok">Faster</td></tr>
+                  <tr><td>Origin load</td><td class="no">High</td><td class="ok">Low</td></tr>
+                  <tr><td>Resilience</td><td class="no">Single point</td><td class="ok">Distributed</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="security" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="container">
+        <span class="eyebrow-2">Protection</span>
+        <h2>Security &amp; DDoS mitigation</h2>
+        <p class="muted" style="max-width:740px">Because Cloudflare sits between visitors and your origin, it can inspect and filter traffic before it ever reaches your server.</p>
+        <div class="grid grid-3" style="margin-top:26px">
+          <div class="card reveal"><div class="ic"><span class="material-symbols-rounded">shield</span></div><h3>DDoS protection</h3><p>Absorbs and filters massive floods of malicious traffic designed to knock sites offline.</p></div>
+          <div class="card reveal"><div class="ic"><span class="material-symbols-rounded">gpp_good</span></div><h3>Web Application Firewall</h3><p>Blocks common attacks like SQL injection and cross-site scripting at the edge.</p></div>
+          <div class="card reveal"><div class="ic"><span class="material-symbols-rounded">smart_toy</span></div><h3>Bot management</h3><p>Distinguishes real visitors from automated bots and scrapers.</p></div>
+          <div class="card reveal"><div class="ic"><span class="material-symbols-rounded">vpn_lock</span></div><h3>Rate limiting</h3><p>Caps abusive request rates to protect APIs and login pages.</p></div>
+          <div class="card reveal"><div class="ic"><span class="material-symbols-rounded">visibility_off</span></div><h3>Origin hiding</h3><p>Masks your server's real IP so attackers can't target it directly.</p></div>
+          <div class="card reveal"><div class="ic"><span class="material-symbols-rounded">verified_user</span></div><h3>Always-on</h3><p>Mitigation runs continuously, not just during an active attack.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dns">
+      <div class="container split">
+        <div class="reveal prose">
+          <span class="eyebrow-2">Infrastructure</span>
+          <h2>DNS &amp; SSL</h2>
+          <p class="muted">Cloudflare runs one of the fastest public DNS networks in the world, including the well-known <strong>1.1.1.1</strong> resolver. When you use Cloudflare for your site, your DNS records are managed from a single dashboard and resolved at the edge.</p>
+          <p class="muted">It also provides free SSL/TLS certificates, so traffic between visitors and the edge is encrypted (the padlock in the browser) without you manually buying or installing a certificate.</p>
+          <ul class="checklist">
+            <li><span class="material-symbols-rounded">check_circle</span> Fast, reliable authoritative DNS</li>
+            <li><span class="material-symbols-rounded">check_circle</span> Free universal SSL certificates</li>
+            <li><span class="material-symbols-rounded">check_circle</span> Automatic HTTPS rewrites</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="card" style="padding:28px">
+            <h3>How a request flows</h3>
+            <div class="steps">
+              <div class="step"><div class="n"></div><div><strong>Visitor</strong><p class="muted" style="margin:0">requests your domain</p></div></div>
+              <div class="step"><div class="n"></div><div><strong>Cloudflare edge</strong><p class="muted" style="margin:0">filters, caches, encrypts</p></div></div>
+              <div class="step"><div class="n"></div><div><strong>Origin server</strong><p class="muted" style="margin:0">only contacted if needed</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" style="background:var(--bg-soft);border-top:1px solid var(--line)">
+      <div class="container">
+        <div class="center" style="max-width:700px;margin:0 auto 30px">
+          <span class="eyebrow-2">The takeaway</span>
+          <h2>Why websites need Cloudflare</h2>
+          <p class="muted">It bundles speed, security, and reliability into one layer that's easy to switch on — with a free tier that covers most small sites.</p>
+        </div>
+        <div class="stats">
+          <div class="stat reveal"><div class="num">Faster</div><div class="lbl">Edge caching cuts load times</div></div>
+          <div class="stat reveal"><div class="num">Safer</div><div class="lbl">DDoS &amp; firewall built in</div></div>
+          <div class="stat reveal"><div class="num">Free SSL</div><div class="lbl">HTTPS without the hassle</div></div>
+          <div class="stat reveal"><div class="num">Reliable</div><div class="lbl">Global, redundant network</div></div>
+        </div>
+        <div class="center" style="margin-top:30px">
+          <a class="btn btn-primary" href="https://www.cloudflare.com" target="_blank" rel="noopener nofollow">Visit Cloudflare <span class="material-symbols-rounded">open_in_new</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/fonts.js"></script>
+  <script src="js/styles.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Domains & DNS Explained — How Domain Registration Works | StackGuide</title>
+  <meta name="description" content="A beginner-friendly guide to domain names: what they are, how registrars like Squarespace Domains work, how DNS connects a name to a website, and tips for choosing a domain." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://stackguide.example/domains.html" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a73e8'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <div id="app-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.php">Home</a> / Domains</div>
+        <span class="eyebrow-2">Foundations</span>
+        <h1>Domains &amp; DNS, explained from scratch</h1>
+        <p class="lead muted" style="max-width:740px">Every website starts with a domain name. Here's what a domain really is, how registrars such as Squarespace Domains work, and how DNS quietly connects your name to the right server.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="reveal prose">
+          <span class="eyebrow-2">The basics</span>
+          <h2>What is a domain name?</h2>
+          <p class="muted">A domain name is the human-friendly address people type to reach your website — like <strong>example.com</strong>. Behind the scenes, computers talk to each other using numeric IP addresses; the domain name is a memorable label that maps to one of those addresses.</p>
+          <p class="muted">Domains are organised into extensions called TLDs (top-level domains): <span class="badge">.com</span> <span class="badge">.org</span> <span class="badge">.io</span> <span class="badge">.dev</span> and hundreds more. You don't "buy" a domain forever — you register the right to use it, usually one year at a time, and renew it to keep it.</p>
+        </div>
+        <div class="reveal">
+          <div class="card" style="padding:28px">
+            <h3>Anatomy of a web address</h3>
+            <div style="font-family:var(--mono);background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:16px;margin-top:10px;font-size:.9rem">
+              https://<span style="color:var(--primary)">www</span>.<span style="color:var(--accent)">example</span>.<span style="color:var(--danger)">com</span>/page
+            </div>
+            <ul class="checklist">
+              <li><span class="material-symbols-rounded">check_circle</span> <strong>www</strong> — optional subdomain</li>
+              <li><span class="material-symbols-rounded">check_circle</span> <strong>example</strong> — your unique name</li>
+              <li><span class="material-symbols-rounded">check_circle</span> <strong>.com</strong> — the TLD / extension</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="container">
+        <span class="eyebrow-2">How it works</span>
+        <h2>From registration to a live website</h2>
+        <div class="steps" style="margin-top:26px">
+          <div class="step reveal"><div class="n"></div><div><h3>Choose &amp; register a name</h3><p class="muted">Search a registrar for an available name and register it. A registrar is an ICANN-accredited company authorised to sell domain registrations — for example, Squarespace Domains.</p></div></div>
+          <div class="step reveal"><div class="n"></div><div><h3>Point DNS records</h3><p class="muted">DNS (the Domain Name System) is the web's address book. You add records — like an <strong>A record</strong> or <strong>CNAME</strong> — that tell browsers which server hosts your site.</p></div></div>
+          <div class="step reveal"><div class="n"></div><div><h3>Connect your hosting</h3><p class="muted">Link the domain to your website builder or hosting provider. Once DNS propagates (usually minutes to a few hours), visitors reach your site by name.</p></div></div>
+          <div class="step reveal"><div class="n"></div><div><h3>Add SSL &amp; renew</h3><p class="muted">Enable HTTPS with an SSL certificate for a secure padlock, then keep the domain renewed so you never lose it.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow-2">Registrar spotlight</span>
+          <h2>Squarespace Domains</h2>
+          <p class="muted">Squarespace Domains is a popular registrar known for a clean, beginner-friendly dashboard, transparent pricing, and privacy protection included by default. It pairs naturally with Squarespace's website builder, but you can also point a domain registered there to any host.</p>
+          <ul class="checklist">
+            <li><span class="material-symbols-rounded">check_circle</span> Simple search and one-click registration</li>
+            <li><span class="material-symbols-rounded">check_circle</span> Free WHOIS privacy protection</li>
+            <li><span class="material-symbols-rounded">check_circle</span> Built-in DNS management tools</li>
+            <li><span class="material-symbols-rounded">check_circle</span> Optional integration with the website builder</li>
+          </ul>
+          <a class="btn btn-primary" href="https://domains.squarespace.com" target="_blank" rel="noopener nofollow" style="margin-top:.8rem">Visit Squarespace Domains <span class="material-symbols-rounded">open_in_new</span></a>
+          <p class="form-note" style="margin-top:.8rem">Note: This is an independent informational overview. We are not affiliated with Squarespace.</p>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow-2">Other registrars</span>
+          <h2>Popular alternatives</h2>
+          <div class="grid grid-2" style="margin-top:10px">
+            <div class="card"><h3 style="font-size:1.1rem">Google Domains*</h3><p>Now part of Squarespace following Google's 2023 sale of the service.</p></div>
+            <div class="card"><h3 style="font-size:1.1rem">Cloudflare Registrar</h3><p>At-cost domain pricing for accounts using Cloudflare DNS. <a href="cloudflare.html">Learn more</a></p></div>
+            <div class="card"><h3 style="font-size:1.1rem">Namecheap</h3><p>Budget-friendly with frequent promotions and free privacy.</p></div>
+            <div class="card"><h3 style="font-size:1.1rem">GoDaddy</h3><p>One of the largest registrars with a broad add-on marketplace.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-soft);border-top:1px solid var(--line)">
+      <div class="container">
+        <div class="center" style="max-width:640px;margin:0 auto 30px">
+          <span class="eyebrow-2">FAQ</span>
+          <h2>Common domain questions</h2>
+        </div>
+        <div class="faq">
+          <details class="acc reveal"><summary>Do I own my domain forever?<span class="material-symbols-rounded">expand_more</span></summary><div class="acc-body">No — you register the exclusive right to use it for a set period (often one year) and renew to keep it. If you let it expire, someone else can register it.</div></details>
+          <details class="acc reveal"><summary>What's the difference between a registrar and a host?<span class="material-symbols-rounded">expand_more</span></summary><div class="acc-body">A registrar manages your domain name; a host stores your website's files and serves them to visitors. They can be the same company or two different ones.</div></details>
+          <details class="acc reveal"><summary>How long does DNS take to update?<span class="material-symbols-rounded">expand_more</span></summary><div class="acc-body">Changes usually take effect within minutes, but full global propagation can take up to 24–48 hours depending on cached records.</div></details>
+          <details class="acc reveal"><summary>Should I pay for WHOIS privacy?<span class="material-symbols-rounded">expand_more</span></summary><div class="acc-body">Privacy protection hides your personal contact details from public WHOIS lookups. Many registrars, including Squarespace Domains, now include it free.</div></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/fonts.js"></script>
+  <script src="js/styles.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/analytics.js"></script>
+</body>
+</html>

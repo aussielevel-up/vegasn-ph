@@ -1,0 +1,91 @@
+/*
+ * base.css
+ * Design tokens, CSS reset, base typography, and buttons.
+ * Loaded first so variables are available to layout.css and components.css.
+ */
+
+:root{
+  --primary:#1a73e8;
+  --primary-dark:#1558b0;
+  --accent:#34a853;
+  --warn:#fbbc05;
+  --danger:#ea4335;
+  --ink:#202124;
+  --muted:#5f6368;
+  --line:#e8eaed;
+  --bg:#ffffff;
+  --bg-soft:#f8f9fc;
+  --radius:16px;
+  --radius-sm:10px;
+  --shadow-sm:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.10);
+  --shadow-md:0 8px 24px rgba(16,24,40,.10);
+  --shadow-lg:0 24px 60px rgba(16,24,40,.16);
+  --maxw:1160px;
+  --font:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  --display:'Sora','Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);
+  line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body.no-scroll{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.18;color:var(--ink);margin:0 0 .5em}
+h1{font-size:clamp(2rem,4.5vw,3.4rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.5rem,3vw,2.3rem);letter-spacing:-.01em}
+h3{font-size:1.3rem}
+p{margin:0 0 1rem}
+.muted{color:var(--muted)}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+.section-tight{padding:44px 0}
+.center{text-align:center}
+.material-symbols-rounded{vertical-align:middle;font-variation-settings:'opsz' 24}
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4); /* optional dark overlay */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal{
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 16px;
+  padding: 22px;
+  width: min(520px,92vw);
+  box-shadow: var(--shadow);
+}
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;justify-content:center;
+  font-weight:600;font-size:.98rem;border-radius:999px;padding:.78rem 1.5rem;
+  border:1px solid transparent;cursor:pointer;transition:.2s ease;text-decoration:none;
+}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 18px rgba(26,115,232,.35)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:var(--shadow-sm)}
+.btn-ghost:hover{border-color:#cfd4dc}
+.btn-light{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-light:hover{background:rgba(255,255,255,.26)}
+
+/* ---------- Utilities ---------- */
+.mt-0{margin-top:0}
+.mb-0{margin-bottom:0}
+.eyebrow-2{color:var(--primary);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+.badge{display:inline-block;background:rgba(26,115,232,.1);color:var(--primary);font-weight:600;font-size:.78rem;padding:.25rem .6rem;border-radius:999px}
+.pill-row{display:flex;flex-wrap:wrap;gap:.5rem}
+.pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.4rem .85rem;font-size:.85rem;color:var(--muted);box-shadow:var(--shadow-sm)}

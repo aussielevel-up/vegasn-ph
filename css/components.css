@@ -1,0 +1,95 @@
+/*
+ * components.css
+ * Reusable UI pieces: cards, checklists, reviews, tables, accordions, CTA
+ * bands, forms, prose/legal text, the cookie banner, and animations.
+ */
+
+/* ---------- Cards ---------- */
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+  box-shadow:var(--shadow-sm);transition:.22s ease;height:100%;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#dfe3ea}
+.card .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(135deg,rgba(26,115,232,.12),rgba(52,168,83,.12));color:var(--primary);
+  margin-bottom:14px;font-size:1.4rem}
+.card h3{margin-bottom:.4rem}
+.card p{color:var(--muted);font-size:.96rem;margin:0}
+.card .more{display:inline-flex;align-items:center;gap:.3rem;margin-top:.9rem;font-weight:600;font-size:.9rem}
+
+/* ---------- Checklist ---------- */
+.checklist{list-style:none;margin:1rem 0 0;padding:0}
+.checklist li{display:flex;gap:.6rem;align-items:flex-start;padding:.45rem 0;color:var(--muted)}
+.checklist li .material-symbols-rounded{color:var(--accent);font-size:1.25rem}
+
+/* ---------- Reviews ---------- */
+.review{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm);height:100%}
+.stars{color:var(--warn);letter-spacing:2px;font-size:1.05rem}
+.review .who{display:flex;align-items:center;gap:.7rem;margin-top:14px}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;
+  background:linear-gradient(135deg,var(--primary),var(--accent))}
+
+/* ---------- Tables ---------- */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+table.cmp{width:100%;border-collapse:collapse;min-width:560px;background:#fff}
+table.cmp th,table.cmp td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
+table.cmp th{background:var(--bg-soft);font-family:var(--display);font-weight:700}
+table.cmp td .material-symbols-rounded{font-size:1.2rem}
+.ok{color:var(--accent)}
+.no{color:var(--danger)}
+
+/* ---------- Accordion (FAQ) ---------- */
+.faq{max-width:820px;margin:0 auto}
+.acc{border:1px solid var(--line);border-radius:var(--radius-sm);background:#fff;margin-bottom:12px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.acc summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .material-symbols-rounded{transition:.2s;color:var(--muted)}
+.acc[open] summary .material-symbols-rounded{transform:rotate(180deg)}
+.acc .acc-body{padding:0 20px 18px;color:var(--muted)}
+
+/* ---------- CTA band ---------- */
+.cta-band{background:linear-gradient(135deg,var(--primary),#0b57d0);color:#fff;border-radius:24px;
+  padding:48px;text-align:center;box-shadow:var(--shadow-lg)}
+.cta-band h2{color:#fff}
+.cta-band p{color:rgba(255,255,255,.9);max-width:640px;margin:0 auto 1.4rem}
+
+/* ---------- Forms ---------- */
+.form{display:grid;gap:16px;max-width:640px}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:.35rem}
+.field input,.field textarea,.field select{
+  width:100%;padding:.8rem .9rem;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;
+}
+.field input:focus,.field textarea:focus,.field select:focus{outline:2px solid rgba(26,115,232,.35);border-color:var(--primary)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr}}
+.form-note{font-size:.85rem;color:var(--muted)}
+.alert{padding:.9rem 1rem;border-radius:10px;background:rgba(52,168,83,.12);color:#1e7e34;border:1px solid rgba(52,168,83,.3);display:none}
+.alert.show{display:block}
+
+/* ---------- Article / legal prose ---------- */
+.prose{max-width:820px}
+.prose h2{margin-top:1.8em}
+.prose h3{margin-top:1.4em}
+.prose ul{padding-left:1.2rem;color:var(--muted)}
+.prose li{margin:.35rem 0}
+.toc{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin-bottom:24px}
+.toc ul{margin:.4rem 0 0;padding-left:1.1rem}
+
+/* ---------- Cookie consent ---------- */
+.cookie{position:fixed;left:18px;right:18px;bottom:18px;z-index:80;max-width:520px;margin:0 auto;
+  background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);
+  padding:18px 20px;display:none}
+.cookie.show{display:block;animation:slideup .35s ease}
+.cookie p{font-size:.9rem;color:var(--muted);margin:0 0 12px}
+.cookie .row{display:flex;gap:.6rem;flex-wrap:wrap}
+@keyframes slideup{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* ---------- Reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Back to top ---------- */
+.to-top{position:fixed;right:18px;bottom:18px;z-index:60;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;color:var(--ink);box-shadow:var(--shadow-md);cursor:pointer;
+  display:none;place-items:center}
+.to-top.show{display:grid}
